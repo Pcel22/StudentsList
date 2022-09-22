@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title> Система учёта студентов </title>
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-expand- bg-dark navbar-dark
+/">
+    <!-- Brand -->
+    <a class="navbar-brand text-center">
+        <h3> Система учёта студентов </h3>
+    </a>
+</nav>
+<br>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+            <h2 class="text-center"> Удалить учётную запись </h2>
+
+            <td>
+                <a th:href="@{/students}" data-toggle="tooltip" title="Удалить данные?"
+                   class="btn btn-success btn-block"> Нет ? </a>
+
+                <a th:href="@{/students/{id}(id=${student.id})}" data-toggle="tooltip" title="Удалить данные?"
+                   class="btn btn-danger btn-block"> Да ? </a>
+
+            </td>
+
+        </div>
+    </div>
+</div>
+
+
+</body>
+
+</html>

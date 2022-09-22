@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title> Система учёта студентов </title>
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+</head>
+<body>
+
+<nav class="navbar navbar-expand- bg-dark navbar-dark">
+    <!-- Brand -->
+    <a class="navbar-brand" th:href="@{/students}">
+        <h2> Система учёта студентов </h2>
+    </a>
+</nav>
+<br>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+            <h2 class="text-center"> Редактировать запись </h2>
+
+            <div class="card-body">
+                <form th:action="@{/students/{id} (id=${student.id})}" th:object="${student}" method="POST">
+
+                    <div class="form-group">
+                        <label> Фамилия </label>
+                        <input
+                                type="text"
+                                name="firstName"
+                                th:field="*{firstName}"
+                                class="form-control"
+                                placeholder="Введите фамилию"
+                        />
+                    </div>
+
+                    <div class="form-group">
+                        <label> Имя </label>
+                        <input
+                                type="text"
+                                name="lastName"
+                                th:field="*{lastName}"
+                                class="form-control"
+                                placeholder="Введите имя"
+                        />
+                    </div>
+
+                    <div class="form-group">
+                        <label> Контакт </label>
+                        <input
+                                type="text"
+                                name="contacts"
+                                th:field="*{contacts}"
+                                class="form-control"
+                                placeholder="Введите контакт"
+                        />
+                    </div>
+
+                    <div class="form-group">
+                        <label> № Группы  </label>
+                        <input
+                                type="text"
+                                name="groupNum"
+                                th:field="*{groupNum}"
+                                class="form-control"
+                                placeholder="Введите номер группы"
+                        />
+                    </div>
+
+                    <div class="box-footer">
+                        <button type="submit" class="btn btn-primary">
+                            Сохранить данные
+                        </button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
